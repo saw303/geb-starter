@@ -27,6 +27,7 @@ This tutorial contains additional [YouTube videos][ytplaylist] that cover this t
 
 * **Step-00:** https://youtu.be/kZ2fSC7JqUU
 * **Step-01:** https://youtu.be/mJzI11DZC4k
+* **Step-02:** https://youtu.be/2jbG6N0UcBI
 
 [geb]: http://www.gebish.org/
 [ytplaylist]: https://www.youtube.com/playlist?list=PLF3Sz8vTFXx9a281EYUN6MjKAN_Y1qjRI
