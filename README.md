@@ -16,7 +16,7 @@ In order to list all available Git tags please use
 
 ## Step by step introduction
 
-* **Step-00:** Basic Geb setup using the Spock Framework with Google Chrome Webdriver and Gradle. The setup provides you a simple test that navigates to http://www.google.com/ and verifies the title of the site.
+* **Step-00:** Basic Geb setup using the Spock Framework with Google Chrome Webdriver and Gradle. The setup provides you a simple test that navigates to [Google][googlecom] and verifies the title of the site.
 * **Step-01:** Enter some text into the Google Search textfield and start a query
 * **Step-02:** Create a page object that represents the Google search page
 
@@ -31,3 +31,4 @@ This tutorial contains additional [YouTube videos][ytplaylist] that cover this t
 
 [geb]: http://www.gebish.org/
 [ytplaylist]: https://www.youtube.com/playlist?list=PLF3Sz8vTFXx9a281EYUN6MjKAN_Y1qjRI
+[googlecom]: https://www.google.com
