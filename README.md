@@ -21,11 +21,12 @@ In order to list all available Git tags please use
 * **Step-02:** Create a page object that represents the Google search page
 
 
-## Youtube Video to this tutorial
+## YouTube videos to this tutorial
 
-This tutorial contains additional Youtube videos that cover this three steps. **Disclaimer** The videos are in German language.
+This tutorial contains additional [YouTube videos][ytplaylist] that cover this three steps. **Disclaimer** The videos are in German language.
 
 * **Step-00:** https://youtu.be/kZ2fSC7JqUU
 * **Step-01:** https://youtu.be/mJzI11DZC4k
 
 [geb]: http://www.gebish.org/
+[ytplaylist]: https://www.youtube.com/playlist?list=PLF3Sz8vTFXx9a281EYUN6MjKAN_Y1qjRI
