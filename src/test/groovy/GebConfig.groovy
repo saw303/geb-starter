@@ -4,6 +4,7 @@
 	See: http://www.gebish.org/manual/current/#configuration
 */
 
+
 import io.github.bonigarcia.wdm.ChromeDriverManager
 import org.openqa.selenium.chrome.ChromeDriver
 

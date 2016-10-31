@@ -1,4 +1,4 @@
-
+import ch.silviowangler.geb.pages.GoogleFrontPage
 import geb.spock.GebReportingSpec
 import spock.lang.Stepwise
 
@@ -8,7 +8,7 @@ class GoogleSpec extends GebReportingSpec {
   void "Visit Google.com"() {
 
     when:
-    go "/"
+    to GoogleFrontPage
 
     then:
     title == 'Google'
@@ -16,23 +16,25 @@ class GoogleSpec extends GebReportingSpec {
 
   void "Make sure the query field is initially empty"() {
 
-    expect:
-    $("input", name: "q").text() == ''
+    expect: 'The search field is initially empty'
+    searchInputField.text() == ''
   }
 
   void "Enter a query"() {
 
     when: 'Enter "Geb Framework" into the search field'
-    $("input", name: "q").value 'Geb Framework'
+    searchInputField.value 'Geb Framework'
 
     and: 'Click the search button'
-    $("button", name: "btnG").click()
+    searchButton.click()
 
     and: 'wait until the search result element is visible'
-    waitFor { $('#sbfrm_l').displayed }
+    waitFor { searchResultsContainer.displayed }
 
     then:
-    $('h3.r')[0].text() == 'Geb - Very Groovy Browser Automation'
+    title == 'Geb Framework - Google Search'
 
+    and:
+    firstResult.text() == 'Geb - Very Groovy Browser Automation'
   }
 }
