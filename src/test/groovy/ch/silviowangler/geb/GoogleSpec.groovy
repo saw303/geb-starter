@@ -32,7 +32,7 @@ class GoogleSpec extends GebReportingSpec {
     waitFor { searchResultsContainer.displayed }
 
     then:
-    title == 'Geb Framework - Google Search'
+    title.startsWith('Geb Framework - Google')
 
     and:
     firstResult.text() == 'Geb - Very Groovy Browser Automation'

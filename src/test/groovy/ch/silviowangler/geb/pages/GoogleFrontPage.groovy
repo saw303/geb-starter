@@ -16,7 +16,7 @@ class GoogleFrontPage extends Page {
     static content = {
         searchInputField { $("input", name: "q") }
 
-        searchButton { $("button", name: "btnG") }
+        searchButton { $("input", name: "btnK") }
 
         searchResultsContainer { $('#sbfrm_l') }
 
