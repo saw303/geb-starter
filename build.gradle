@@ -38,6 +38,9 @@ dependencies {
     testCompile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
     
     testCompile "io.github.bonigarcia:webdrivermanager:1.7.1"
+
+    testRuntime 'ch.qos.logback:logback-classic:1.2.3'
+
 }
 
 drivers.each { driver ->
