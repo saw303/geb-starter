@@ -7,6 +7,8 @@
 
 import io.github.bonigarcia.wdm.ChromeDriverManager
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.remote.DesiredCapabilities
 
 waiting {
 	timeout = 2
@@ -18,11 +20,21 @@ environments {
 	// See: http://code.google.com/p/selenium/wiki/ChromeDriver
 	chrome {
 		ChromeDriverManager.instance.setup()
-		driver = { new ChromeDriver() }
+		driver = {
+
+			ChromeOptions options = new ChromeOptions()
+			options.addArguments('--headless', '--disable-gpu')
+
+			def capabilities = DesiredCapabilities.chrome()
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options)
+
+			def driver = new ChromeDriver(capabilities)
+			return driver
+		}
 	}
 }
 
 // To run the tests with all browsers just run “./gradlew test”
 
-baseUrl = "http://www.google.com"
+baseUrl = "https://www.google.com"
 reportsDir = "build/reports/intellij-geb-reports"
