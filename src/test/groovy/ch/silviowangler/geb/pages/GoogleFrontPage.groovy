@@ -1,6 +1,7 @@
 package ch.silviowangler.geb.pages
 
 import geb.Page
+import geb.navigator.Navigator
 
 /**
  * @author Silvio Wangler
@@ -16,11 +17,20 @@ class GoogleFrontPage extends Page {
     static content = {
         searchInputField { $("input", name: "q") }
 
-        searchButton { $("input", name: "btnK") }
+        searchButton {
+            Navigator navigator = $("form", name: "f").find(name: "btnK", type: "submit", "input")
+
+            if (navigator.size() == 1) {
+                return navigator.singleElement()
+            } else if (navigator.size() > 1) {
+                return navigator.lastElement()
+            }
+            throw new RuntimeException("Element not found")
+        }
 
         searchResultsContainer { $('#sbfrm_l') }
 
-        searchResults { $('h3.r') }
+        searchResults { $('div.r').find('h3') }
 
         firstResult { searchResults[0] }
     }

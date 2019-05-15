@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.remote.DesiredCapabilities
+import org.openqa.selenium.safari.SafariDriver
+import org.openqa.selenium.safari.SafariOptions
 
 waiting {
 	timeout = 2
@@ -41,6 +43,11 @@ environments {
 			FirefoxOptions options = new FirefoxOptions()
 			options.setHeadless(true)
 			return new FirefoxDriver(options)
+		}
+	}
+	safari {
+		driver = {
+			return new SafariDriver()
 		}
 	}
 }
