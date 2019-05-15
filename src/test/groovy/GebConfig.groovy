@@ -5,9 +5,11 @@
 */
 
 
-import io.github.bonigarcia.wdm.ChromeDriverManager
+import io.github.bonigarcia.wdm.WebDriverManager
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.remote.DesiredCapabilities
 
 waiting {
@@ -19,17 +21,26 @@ environments {
 	// run via “./gradlew chromeTest”
 	// See: http://code.google.com/p/selenium/wiki/ChromeDriver
 	chrome {
-		ChromeDriverManager.instance.setup()
+		WebDriverManager.chromedriver().setup()
 		driver = {
 
 			ChromeOptions options = new ChromeOptions()
 			options.addArguments('--headless', '--disable-gpu')
 
-			def capabilities = DesiredCapabilities.chrome()
+			DesiredCapabilities capabilities = DesiredCapabilities.chrome()
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options)
 
 			def driver = new ChromeDriver(capabilities)
 			return driver
+		}
+	}
+	firefox {
+		WebDriverManager.firefoxdriver().setup()
+
+		driver = {
+			FirefoxOptions options = new FirefoxOptions()
+			options.setHeadless(true)
+			return new FirefoxDriver(options)
 		}
 	}
 }
